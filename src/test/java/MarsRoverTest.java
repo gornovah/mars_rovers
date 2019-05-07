@@ -29,8 +29,10 @@ public class MarsRoverTest {
     }
 
     @ParameterizedTest
-    @CsvSource({"M, 1:0:N",
-                 "MM, 2:0:N",})
+    @CsvSource({"M,   1:0:N",
+                "MM,  2:0:N",
+                "MMM, 3:0:N",
+                "MMMMMMMMMMM, 0:0:N"})
     public void given_initial_position_when_M_move_foward_rovers(String command, String expected) {
         String position = marsRovers.execute(command);
         assertThat(position, is(expected));
