@@ -19,4 +19,11 @@ public class MarsRoverTest {
         assertThat(position, is("0:0:E"));
     }
 
+    @Test
+    public void move_foward_rovers_when_m() {
+        MarsRover marsRovers = new MarsRover();
+        String position = marsRovers.execute("M");
+        assertThat(position, is("1:0:N"));
+    }
+
 }
